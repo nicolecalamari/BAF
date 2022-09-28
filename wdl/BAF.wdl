@@ -40,9 +40,10 @@ task divideBafBySample{
         File baf_output = "${sample}.txt"
     }
 
-    command <<<
-        grep '${sample}' /src/prenatal/baf/batch0_prenatal.BAF.txt > ${sample}.txt
-    >>>
+    command {
+        grep ${sample} /src/prenatal/baf/batch0_prenatal.BAF.txt > ${sample}.txt
+    }
+    
 
     runtime {
         memory: "48 GiB"
