@@ -21,6 +21,11 @@ workflow BAF {
                 variant_interpretation_docker=variant_interpretation_docker
         }
     }
+
+    output{
+
+        File baf_output = divideBafBySample.baf_output
+    }
 }
 
 
