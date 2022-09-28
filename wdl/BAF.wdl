@@ -6,7 +6,7 @@ workflow BAF {
     input {
 
         #File samples_list
-        Array[String] samples_list
+        Array[String] samples
         String variant_interpretation_docker
 
     }
