@@ -51,5 +51,8 @@ task divideBafBySample{
         preemptible: 3
         maxRetries: 1
         docker: variant_interpretation_docker
+        memory: "64 GiB"
+        memory: "48 GiB"
+        bootDiskSizeGb: 32
     }
 }
