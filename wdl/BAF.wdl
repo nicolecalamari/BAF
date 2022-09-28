@@ -24,7 +24,7 @@ workflow BAF {
 
     output{
 
-        File baf_output = divideBafBySample.baf_output
+        Array[File] baf_output = divideBafBySample.baf_output
     }
 }
 
