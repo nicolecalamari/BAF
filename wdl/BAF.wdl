@@ -5,12 +5,13 @@ workflow BAF {
 
     input {
 
-        File samples_list
+        #File samples_list
+        Array[String] samples_list
         String variant_interpretation_docker
 
     }
 
-    Array[String] samples = transpose(read_tsv(samples_list))[0]
+    #Array[String] samples = transpose(read_tsv(samples_list))[0]
 
     scatter(sample in samples) {
 
