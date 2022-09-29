@@ -6,6 +6,7 @@ workflow BAF {
     input {
 
         #File samples_list
+        File baf_file
         Array[String] samples
         String variant_interpretation_docker
 
@@ -18,6 +19,7 @@ workflow BAF {
         call divideBafBySample{
             input:
                 sample=sample,
+                baf_file=baf_file
                 variant_interpretation_docker=variant_interpretation_docker
         }
     }
@@ -32,6 +34,7 @@ workflow BAF {
 task divideBafBySample{
     input{
         String sample
+        File baf_file
         String variant_interpretation_docker
     }
 
@@ -41,13 +44,13 @@ task divideBafBySample{
     }
 
     command {
-        grep ${sample} /src/prenatal/baf/batch0_prenatal.BAF.txt > ${sample}.txt
+        grep ${sample} ${baf_file} > ${sample}.txt
     }
     
 
     runtime {
         memory: "48 GiB"
-        disks: "local-disk 32 HDD"
+        disks: "local-disk 50 HDD"
         cpu: 1
         preemptible: 3
         maxRetries: 1
