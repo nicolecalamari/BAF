@@ -19,7 +19,7 @@ workflow BAF {
         call divideBafBySample{
             input:
                 sample=sample,
-                baf_file=baf_file
+                baf_file=baf_file,
                 variant_interpretation_docker=variant_interpretation_docker
         }
     }
