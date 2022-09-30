@@ -44,7 +44,7 @@ task divideBafBySample{
     }
 
     command {
-        grep ${sample} ${baf_file} > ${sample}.txt
+        zgrep ${sample} ${baf_file} > ${sample}.txt
     }
     
 
